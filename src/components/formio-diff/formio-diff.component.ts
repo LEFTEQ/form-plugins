@@ -4,7 +4,6 @@ import { registerPwflFormPlugin, findComponentByKey } from 'pwfl-forms';
 import { IFormioHtmlElement } from 'experimental-forms/models';
 
 import './formio-diff.style.scss';
-import { findComponentByPath } from 'experimental-forms/utils/powerflow';
 
 declare const Formio: any;
 
@@ -129,15 +128,15 @@ export class FormioDiffComponent extends InputPlugin<any> {
   }
 
   private _listenToChanges() {
-    const diffInput: any = findComponentByPath(
+    const diffInput: any = findComponentByKey(
       this.root.components,
-      this.component.diffInput,
+      this.component.diffInput.split('.').pop(), // fixme - configuration contains path instead of intended key - use findComponentByPath when available
       true,
       true,
     );
     const diffInputNew: any = findComponentByKey(
       this.root.components,
-      this.component.diffInputNew.split('.').pop(),
+      this.component.diffInputNew.split('.').pop(), // fixme - configuration contains path instead of intended key - use findComponentByPath when available
       true,
       true,
     );

@@ -1,0 +1,23 @@
+{
+  "name": "plugin-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:lovely-text-field1": " tsc && VITE_BUILD_TARGET=lovely-text-field vite build",
+    "build:formio-diff": " tsc && VITE_BUILD_TARGET=formio-diff vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "experimental-forms": "1.0.3",
+    "pwfl-forms": "0.0.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.1",
+    "sass": "^1.64.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-css-injected-by-js": "^3.2.1"
+  }
+}

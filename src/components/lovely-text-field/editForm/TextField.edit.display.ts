@@ -1,0 +1,41 @@
+export default [
+  {
+    weight: 410,
+    type: 'textfield',
+    input: true,
+    key: 'inputMask',
+    label: 'EDIT_FORM.TEXT_FIELD.INPUT_MASK_LABEL',
+    tooltip: 'EDIT_FORM.TEXT_FIELD.INPUT_MASK_TOOLTIP',
+  },
+  {
+    weight: 1350,
+    type: 'checkbox',
+    input: true,
+    key: 'spellcheck',
+    defaultValue: true,
+    label: 'EDIT_FORM.TEXT_FIELD.SPELLCHECK_LABEL',
+  },
+  {
+    weight: 320,
+    type: 'textfield',
+    input: true,
+    key: 'prefix',
+    label: 'EDIT_FORM.TEXT_FIELD.PREFIX_LABEL',
+  },
+  {
+    weight: 330,
+    type: 'textfield',
+    input: true,
+    key: 'suffix',
+    label: 'EDIT_FORM.TEXT_FIELD.SUFFIX_LABEL',
+  },
+  {
+    weight: 700,
+    type: 'textfield',
+    input: true,
+    key: 'autocomplete',
+    label: 'EDIT_FORM.TEXT_FIELD.AUTO_COMPLETE_LABEL',
+    placeholder: 'on',
+    tooltip: 'EDIT_FORM.TEXT_FIELD.AUTO_COMPLETE_TOOLTIP',
+  },
+];

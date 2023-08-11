@@ -1,0 +1,63 @@
+.formio-diff {
+  p.bold {
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .blockquote {
+    background: rgb(188 188 188 / 30%);
+    border-left: 3px solid black;
+    padding: 0 15px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table td {
+    border: 1px solid #ccc;
+  }
+
+  .diff-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .diff-card .card {
+    margin: 0;
+    flex: 1 0 0;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -8px;
+  }
+
+  .current-document ins {
+    background: lightgreen;
+    text-decoration: none;
+  }
+
+  .current-document del {
+    background: pink;
+  }
+
+  .system-generated del {
+    visibility: hidden;
+  }
+
+  .system-generated ins {
+    text-decoration: none;
+  }
+
+  .system-generated ins ~ del {
+    display: none;
+  }
+}

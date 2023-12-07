@@ -208,23 +208,23 @@ export default class LovelyTextField extends InputPlugin<ITextFieldComponent, an
     const changed: boolean = this.updateValue(value, flags);
 
     if (this.inputRef) {
-      this.inputRef.value = this.transformValueToNg(value);
+      this.inputRef.value = this.mapValueToInput(value);
     }
 
     return changed;
   }
 
 
-  // Used as hook to change value which is output from info.changeEvent = 'input' before it is passed to submission
-  transformValueFromNg(value: any): string {
-    return value;
+  // Used as hook to change value which is output from info.changeEvent = 'input' before it is passed to submission - YOU HAVE TO USE THIS IF YOU USE DEFAULT HTML INPUT EVENT - eg: value.target.value - because you will have that event as output of that listener - if you use custom events that return value directly - you can ignore this function
+  // You cannot control how changes are passed to submission - you can only control what value from that event is passed to submission - this is the middle step between info.changeEvent & submission
+  mapValueFromEventChange(value: any): string {
+    return value.target?.value;
   }
 
   // Used as hook between submission set & calling setValue function
-  transformValueToNg(value: string): any {
+  mapValueToInput(value: string): any {
     return value;
   }
-
 }
 
 registerPwflFormPlugin({

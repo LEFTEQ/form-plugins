@@ -148,12 +148,13 @@ export default class LovelyTextField extends InputPlugin<ITextFieldComponent, an
     return '';
   }
 
-  getReadonlyValue(value) { // If you want to somehow parse value for readonly - you can return HTML string
+  getReadonlyValue(value) { // If you want to change displayed readonly value - this is the place to do it - also you can return HTML string
     return value;
   }
 
   // This function has to be enabled in -   supportedConfiguration STATIC_READONLY
   // Used for high performance readonly rendering (in tables etc) - if you want to use standard readonly rendering - just ignore this function
+  // Could have extreme performance impact - if you do not use it and this component is used in tables etc.
   static getReadonlyValue(value, component, options) {
     return value;
   }
@@ -189,7 +190,7 @@ export default class LovelyTextField extends InputPlugin<ITextFieldComponent, an
   [x: string]: any;
 }
 */
-  // If you use standard "value" is value setter - you can just remove this function - if you want to use custom value setter - you have to use this function
+  // If you use standard "value" as value setter, then you can just remove this function - if you want to use custom value setter - you have to use this function
   // Also - do not forget to call updateValue and return its return - as it could result in infinite looping etc.
   setValue(value: string, flags: any = {}): boolean {
     if (this.options.builder) return false;

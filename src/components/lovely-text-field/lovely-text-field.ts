@@ -144,7 +144,7 @@ export default class LovelyTextField extends InputPlugin<ITextFieldComponent, an
     return superAttach;
   }
 
-  get emptyValue() { // Plugins should always have string value as empty value - please do not try to change this - it is somehow controlled by powerflow - but I feel it could be quite easily changed to any value from plugin itself
+  get emptyValue() { // Plugins should always have string value as empty value - please do not try to change this - it is kinda controlled by powerflow - but I feel it could be quite easily changed to any value from plugin itself
     return '';
   }
 

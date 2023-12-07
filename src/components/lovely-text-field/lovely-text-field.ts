@@ -169,6 +169,12 @@ export default class LovelyTextField extends InputPlugin<ITextFieldComponent, an
     return super.checkComponentValidity(data, dirty, row, options);
   }
 
+
+  // Function to check if value is empty - only required, if your empty value is not "", null, undefined, false - eg - you have some sort of more advanced data structure
+  isEmpty(value: any): boolean {
+    return !value
+  }
+
   // Quite obvious
   set disabled(value: boolean) {
     super.disabled = value;
